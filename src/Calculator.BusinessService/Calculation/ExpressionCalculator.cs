@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Calculator.Domain.Calculation;
 using Calculator.Domain.CommonType;
@@ -33,6 +34,10 @@ namespace Calculator.BusinessService.Calculation
             {
                 return new Result<int>(true, "Error");
             }
+            catch (CalculationException ex)
+            {
+                return new Result<int>(true, ex.Message);
+            }
 
             var result = new Result<int>(nodes.Pop().Value);
 
@@ -47,6 +52,13 @@ namespace Calculator.BusinessService.Calculation
             var postfix = new StringBuilder();
 
             var ops = new Stack<string>();
+            var countOfParentheses = 0;
+
+            if(input.Split('(').Count() != input.Split(')').Count())
+            {
+                throw new InvalidOperationException();
+            }
+
             foreach (var c in input)
             {
                 // When we see an operator, we can pop anything
@@ -67,6 +79,11 @@ namespace Calculator.BusinessService.Calculation
                     {
                         case "(":
                             ops.Push(s);
+                            countOfParentheses ++;
+                            if (countOfParentheses > 1)
+                            {
+                                throw new CalculationException("Sorry, this is too complex");
+                            }
                             break;
 
                         case ")":

@@ -20,14 +20,17 @@ namespace Calculator.BusinessService.Tests.Calculation
         }
 
         [Theory]
-        [InlineData("2+3*4+", true)]
-        public void InvalidExpression_Should_Return_AnErrorMessage(string input, bool expectedResult)
+        [InlineData("2+3*4+", true, "Error")]
+        [InlineData("((2+3)*(4+5))", true, "Sorry, this is too complex")]
+        [InlineData("((2+3)", true, "Error")]
+        public void InvalidExpression_Should_Return_AnErrorMessage(string input, bool expectedResult, string errorMessage)
         {
             var calculator = new ExpressionCalculator();
 
             var result = calculator.Calculate(input);
 
             Assert.Equal(expectedResult, result.IsError);
+            Assert.Equal(errorMessage, result.ErrorText);
         }
     }
 }
