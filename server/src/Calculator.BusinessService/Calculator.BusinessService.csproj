@@ -12,5 +12,11 @@
     <Reference Include="StructureMap, Version=4.5.1.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\..\..\..\.nuget\packages\structuremap\4.5.1\lib\netstandard1.3\StructureMap.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap, Version=4.5.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\..\..\.nuget\packages\structuremap\4.5.1\lib\netstandard1.3\StructureMap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="StructureMap" Version="4.5.1" />
   </ItemGroup>
 </Project>

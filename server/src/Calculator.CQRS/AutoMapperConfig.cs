@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Calculator.CQRS.Commands;
 using Calculator.DataAccess.Entities.Calculation;
 using Calculator.Domain.Calculation;
 using Calculator.Domain.CommonType;
