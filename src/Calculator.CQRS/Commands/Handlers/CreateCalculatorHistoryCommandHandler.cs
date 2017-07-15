@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Calculator.CQRS.Commands.Infrastructure;
+﻿using Calculator.CQRS.Commands.Infrastructure;
 using Calculator.DataAccess.Entities.Calculation;
 using Calculator.DataAccess.Repositories.Calculation;
 
