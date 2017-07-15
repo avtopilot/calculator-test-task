@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.BusinessService.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.CQRS", "src\Calculator.CQRS\Calculator.CQRS.csproj", "{CA89BD72-37A3-4296-AB46-FFF79B5FE05C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.DataAccess", "src\Calculator.DataAccess\Calculator.DataAccess.csproj", "{6E5511A3-7D1D-42C3-8DF3-11578600EC30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{CA89BD72-37A3-4296-AB46-FFF79B5FE05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA89BD72-37A3-4296-AB46-FFF79B5FE05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA89BD72-37A3-4296-AB46-FFF79B5FE05C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5511A3-7D1D-42C3-8DF3-11578600EC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5511A3-7D1D-42C3-8DF3-11578600EC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5511A3-7D1D-42C3-8DF3-11578600EC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5511A3-7D1D-42C3-8DF3-11578600EC30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +52,6 @@ Global
 		{C341B2E5-4320-4270-9C1F-05AFD6F6AA05} = {9E0CBE6A-CC17-4B4D-A201-0B9DCC42BEEB}
 		{1BE3D3CB-5DD8-47E5-B1EE-197DE35BFB26} = {ACBD37D9-A8D9-48F6-A26F-88FA180A1C65}
 		{CA89BD72-37A3-4296-AB46-FFF79B5FE05C} = {9E0CBE6A-CC17-4B4D-A201-0B9DCC42BEEB}
+		{6E5511A3-7D1D-42C3-8DF3-11578600EC30} = {9E0CBE6A-CC17-4B4D-A201-0B9DCC42BEEB}
 	EndGlobalSection
 EndGlobal
