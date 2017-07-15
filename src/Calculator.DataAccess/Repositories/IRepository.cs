@@ -9,7 +9,7 @@ namespace Calculator.DataAccess.Repositories
 {
     public interface IRepository<T> where T : class, IEntity
     {
-        T GetById(int id);
+        T GetById(string id);
 
         IEnumerable<T> Get(Expression<Func<T, bool>> filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "");
@@ -21,7 +21,7 @@ namespace Calculator.DataAccess.Repositories
 
     public interface IRepository
     {
-        object GetById(int id);
+        object GetById(string id);
         IEnumerable GetAll();
         void Insert(object entity);
         void Delete(object entity);

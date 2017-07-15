@@ -11,7 +11,7 @@ namespace Calculator.DataAccess.Repositories
     {
         protected static readonly List<T> DbSet = new List<T>();
 
-        object IRepository.GetById(int id)
+        object IRepository.GetById(string id)
         {
             return GetById(id);
         }
@@ -51,7 +51,7 @@ namespace Calculator.DataAccess.Repositories
             return DbSet.AsEnumerable();
         }
 
-        public virtual T GetById(int id)
+        public virtual T GetById(string id)
         {
             return DbSet.Find(x => x.Id == id);
         }
