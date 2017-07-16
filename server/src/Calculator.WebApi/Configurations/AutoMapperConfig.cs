@@ -9,7 +9,7 @@ namespace Calculator.WebApi.Configurations
         public AutoMapperConfig()
         {
             CreateMap<CalculatorHistory, CalculationResultDto>()
-                .ForMember(dest => dest.Input, opt => opt.MapFrom(src => src.Input))
+                .ForMember(dest => dest.Expression, opt => opt.MapFrom(src => src.Input))
                 .ForMember(dest => dest.Result, opt => opt.MapFrom(src => src.Result.Value))
                 .ForMember(dest => dest.ErrorText, opt => opt.MapFrom(src => src.Result.ErrorText))
                 ;

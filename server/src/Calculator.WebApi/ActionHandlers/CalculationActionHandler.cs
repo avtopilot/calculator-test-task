@@ -37,7 +37,7 @@ namespace Calculator.WebApi.ActionHandlers
             
             return new CalculationResultDto
             {
-                Input = input,
+                Expression = input,
                 ErrorText = result.ErrorText,
                 Result = result.Value
             };
