@@ -6,7 +6,7 @@
   </div>
 
    <div class="form-group">
-    <div *ngIf="!result.errorText && result.result != null" class="alert alert-danger">
+    <div *ngIf="!result.errorText && result.result != null" class="alert alert-success">
           {{result.expression}} = {{result.result}}
     </div>
     <div *ngIf="result.errorText" class="alert alert-danger">

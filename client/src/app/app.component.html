@@ -1,9 +1,10 @@
 <header>
-  <nav>
-    <a [routerLink]="['about']">About</a>
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <a class="navbar-brand" [routerLink]="['']">Home</a>
+    <a class="navbar-brand" [routerLink]="['about']">About</a>
   </nav>
 </header>
-<main>
+<main class="container main-wrapper">
   <h1>Calculator</h1>
 
   <router-outlet></router-outlet>
