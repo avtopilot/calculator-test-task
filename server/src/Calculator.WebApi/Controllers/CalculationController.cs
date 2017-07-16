@@ -1,4 +1,5 @@
-﻿using Calculator.WebApi.ActionHandlers;
+﻿using System.Collections.Generic;
+using Calculator.WebApi.ActionHandlers;
 using Calculator.WebApi.Dtos.Calculation;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ namespace Calculator.WebApi.Controllers
 
         // GET api/calculation
         [HttpGet]
-        public CalculationHistoryDto Get()
+        public IEnumerable<CalculationResultDto> Get()
         {
             return _calculationActionHandler.GetHistory();
         }

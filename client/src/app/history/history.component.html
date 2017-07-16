@@ -1,0 +1,10 @@
+<table class="table container_history" *ngIf="!isEmpty()">
+    <tr *ngFor="let data of history">
+        <td>{{data.expression}}</td>
+        <td *ngIf="!data.errorText && data.result != null">{{data.result}}</td>
+        <td *ngIf="data.errorText">{{data.errorText}}</td>
+    </tr>
+</table>
+<div *ngIf="isEmpty()">
+    Empty history
+</div>

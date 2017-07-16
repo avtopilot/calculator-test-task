@@ -1,3 +1,4 @@
+import { HistoryComponent } from './history/history.component';
 import { CalculatorService } from './shared/calculator.service';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +22,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    HistoryComponent
   ],
   providers: [
     CalculatorService

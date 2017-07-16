@@ -43,12 +43,12 @@ namespace Calculator.WebApi.ActionHandlers
             };
         }
 
-        public CalculationHistoryDto GetHistory()
+        public IEnumerable<CalculationResultDto> GetHistory()
         {
             var query = new GetCalculatorHistoryContext();
             var history = _queryProcessor.For<IEnumerable<CalculatorHistory>>().Process(query);
 
-            return new CalculationHistoryDto {History = history.Select(Mapper.Map<CalculationResultDto>)};
+            return history.Select(Mapper.Map<CalculationResultDto>);
         }
     }
 }
