@@ -10,7 +10,9 @@ describe('About Component', () => {
   it('should ...', () => {
     const fixture = TestBed.createComponent(AboutComponent);
     fixture.detectChanges();
-    expect(fixture.nativeElement.children[0].textContent).toContain('Author');
+    expect(fixture.nativeElement.children[0].textContent).toContain('This is a simple SPA');
+    expect(fixture.nativeElement.children[1].children[0].textContent).toContain('Author');
+    expect(fixture.nativeElement.children[1].children[1].textContent).toContain('Tolipova');
   });
 
 });
