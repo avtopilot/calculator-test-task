@@ -27,6 +27,17 @@ namespace Calculator.WebApi
         {
             services.AddMvc();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigin", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+                });
+            });
+
             services.AddAutoMapper();
 
             return ApiDependenciesConfig.Create(services);
@@ -36,6 +47,8 @@ namespace Calculator.WebApi
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            
+            app.UseCors("AllowAllOrigin");
 
             app.UseMvc();
         }
