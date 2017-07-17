@@ -24,9 +24,4 @@ export class HomeComponent {
         .subscribe((data: Calculator) => this.result = data);
     }
   }
-
-  onShowHistory() {
-    console.log('show');
-  }
-
 }
