@@ -1,9 +1,7 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { CalculatorService } from '../shared/calculator.service';
 import { Component } from '@angular/core';
-
 import { TestBed } from '@angular/core/testing';
-
 import { CalculatorComponent } from './calculator.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';

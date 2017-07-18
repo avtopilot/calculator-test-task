@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'calculator',
-  templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.scss']
+  templateUrl: './calculator.component.html'
 })
 export class CalculatorComponent {
   result: Calculator;
