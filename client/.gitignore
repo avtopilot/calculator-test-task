@@ -1,0 +1,13 @@
+# Coverage directory used by tools like istanbul
+coverage
+
+# OS generated files
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Node Files
+/node_modules/
+npm-debug.log
+/npm-debug.log.*
