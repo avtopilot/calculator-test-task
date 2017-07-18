@@ -26,7 +26,7 @@ export class CalculatorService {
     }
 
     public getcCalculationResult(input: string): Observable<Calculator> {
-        return this.http.get(this.actionUrl + input)
+        return this.http.get(this.actionUrl + encodeURIComponent(input))
             .map((response: Response) => <Calculator>response.json());
     }
 }

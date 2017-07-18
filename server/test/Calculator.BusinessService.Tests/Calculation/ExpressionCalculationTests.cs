@@ -11,6 +11,8 @@ namespace Calculator.BusinessService.Tests.Calculation
         [InlineData("1+1", 2)]
         [InlineData("(2+3)*(4+5)", 45)]
         [InlineData("1+(2+3)*(4+5)", 46)]
+        [InlineData("1-3", -2)]
+        [InlineData("5/2", 2)]
         public void ValidExpression_Should_Return_IntResult(string input, int expectedResult)
         {
             var calculator = new ExpressionCalculator();
