@@ -1,16 +1,13 @@
 namespace Calculator.Domain.Calculation
 {
     public delegate int Operator(int x, int y);
+ 
     public class BinaryExpression
     {
         protected BinaryExpression()
         {
         }
 
-        /// <summary>
-        /// Constructs a BinaryExpression tree from left and right subtrees
-        /// to be combined with an operator
-        /// </summary>
         public BinaryExpression(BinaryExpression left, BinaryExpression right, Operator op)
         {
             Left = left;

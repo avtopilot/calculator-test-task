@@ -1,5 +1,5 @@
 import { Configuration } from '../app.constants';
-import { Calculator } from '../home/calculator';
+import { Calculator } from '../calculator/calculator';
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/add/operator/map';

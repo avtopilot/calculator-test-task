@@ -2,7 +2,7 @@
   <div class="form-group">
     <input type="text" class="form-control" id="expression"
           [(ngModel)]="model.expression" name="expression" #expression="ngModel"
-          value="model.expression">
+          (ngModelChange)="onExpressionChange()" value="model.expression">
   </div>
 
    <div class="form-group">

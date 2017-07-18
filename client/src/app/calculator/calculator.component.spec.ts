@@ -1,19 +1,20 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { CalculatorService } from '../shared/calculator.service';
 import { Component } from '@angular/core';
 
 import { TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { CalculatorComponent } from './calculator.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-describe('Home Component', () => {
-  const html = '<my-home></my-home>';
+describe('Calculator Component', () => {
+  const html = '<calculator></calculator>';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent, TestComponent],
-      imports: [HttpModule, FormsModule],
+      declarations: [CalculatorComponent, TestComponent],
+      imports: [HttpModule, FormsModule, RouterTestingModule],
       providers: [CalculatorService]
     });
     TestBed.overrideComponent(TestComponent, { set: { template: html }});
