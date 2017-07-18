@@ -1,8 +1,14 @@
-exports.config = {
-  baseUrl: 'http://localhost:8080/',
+require('ts-node/register');
 
+exports.config = {
+  baseUrl: 'http://localhost:3000/',
+
+  /**
+   * Use `npm run e2e`
+   */
   specs: [
-    'src/**/*.e2e-spec.js'
+    'src/**/**.e2e.ts',
+    'src/**/*.e2e.ts'
   ],
   exclude: [],
 
@@ -20,15 +26,23 @@ exports.config = {
   directConnect: true,
 
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    'chromeOptions': {
+      'args': ['show-fps-counter=true']
+    }
   },
 
-  onPrepare: function () {
-    var SpecReporter = require('jasmine-spec-reporter').SpecReporter;
-    jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: true}));
-
+  onPrepare: function() {
     browser.ignoreSynchronization = true;
   },
 
-  useAllAngular2AppRoots: true
+  /**
+   * Angular 2 configuration
+   *
+   * useAllAngular2AppRoots: tells Protractor to wait for any angular2 apps on the page instead of just the one matching
+   * `rootEl`
+   */
+   useAllAngular2AppRoots: true,
+
+   SELENIUM_PROMISE_MANAGER: false,
 };
