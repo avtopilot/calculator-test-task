@@ -12,6 +12,7 @@ namespace Calculator.BusinessService.Calculation
         public Result<int> Calculate(string input)
         {
             var nodes = new Stack<BinaryExpression>();
+
             try
             {
                 foreach (var c in ToPostFix(input))
@@ -28,20 +29,22 @@ namespace Calculator.BusinessService.Calculation
                         var left = nodes.Pop();
                         nodes.Push(new BinaryExpression(left, right, Operators[s]));
                     }
+                    else
+                    {
+                        throw new InvalidOperationException();
+                    }
                 }
-            }
-            catch (InvalidOperationException)
-            {
-                return new Result<int>(true, "Error");
+                
+                return new Result<int>(nodes.Pop().Value);
             }
             catch (CalculationException ex)
             {
                 return new Result<int>(true, ex.Message);
             }
-
-            var result = new Result<int>(nodes.Pop().Value);
-
-            return result;
+            catch (Exception)
+            {
+                return new Result<int>(true, "Error");
+            }
         }
 
         /// <summary>
@@ -109,7 +112,7 @@ namespace Calculator.BusinessService.Calculation
 
         private static bool IsOperator(string op)
         {
-            return op == "-" || op == "+" || op == "*" || op == "/";
+            return Operators.Keys.Contains(op);
         }
 
         private static int Precedence(string op)

@@ -15,6 +15,7 @@ namespace Calculator.BusinessService.Tests.Calculation
         [InlineData("5/2", 2)]
         [InlineData("(2+7)/3", 3)]
         [InlineData("(1+4)/(3-2)*2", 10)]
+        [InlineData("2", 2)]
         public void ValidExpression_Should_Return_IntResult(string input, int expectedResult)
         {
             var calculator = new ExpressionCalculator();
@@ -25,6 +26,12 @@ namespace Calculator.BusinessService.Tests.Calculation
         }
 
         [Theory]
+        [InlineData("2/0", true, "Error")]
+        [InlineData("a+b", true, "Error")]
+        [InlineData("2^3", true, "Error")]
+        [InlineData("a", true, "Error")]
+        [InlineData("2+a", true, "Error")]
+        [InlineData("2/(3-3)*4", true, "Error")]
         [InlineData("2+3*4+", true, "Error")]
         [InlineData("((2+3)*(4+5))", true, "Sorry, this is too complex")]
         [InlineData("((2+3)", true, "Error")]

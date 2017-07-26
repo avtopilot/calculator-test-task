@@ -1,6 +1,5 @@
 import { HistoryComponent } from './history/history.component';
 import { RouterModule, Routes } from '@angular/router';
-
 import { CalculatorComponent } from './calculator/calculator.component';
 import { AboutComponent } from './about/about.component';
 
